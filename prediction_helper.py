@@ -2,11 +2,16 @@
 
 import pandas as pd
 import joblib
+import os
+model_young_path = os.path.join("artifacts", "model_young.joblib")
+model_rest_path = os.path.join("artifacts", "model_rest.joblib")
+scaler_young_path = os.path.join("artifacts", "scaler_young.joblib")
+scaler_rest_path = os.path.join("artifacts", "scaler_rest.joblib")
 
-model_young = joblib.load("/Users/durga/Desktop/durga_training_codebasics_io/ml/app/artifacts/model_young.joblib")
-model_rest = joblib.load("/Users/durga/Desktop/durga_training_codebasics_io/ml/app/artifacts/model_rest.joblib")
-scaler_young = joblib.load("/Users/durga/Desktop/durga_training_codebasics_io/ml/app/artifacts/scaler_young.joblib")
-scaler_rest = joblib.load("/Users/durga/Desktop/durga_training_codebasics_io/ml/app/artifacts/scaler_rest.joblib")
+model_young = joblib.load(model_young_path)
+model_rest = joblib.load(model_rest_path)
+scaler_young = joblib.load(scaler_young_path)
+scaler_rest = joblib.load(scaler_rest_path)
 
 def calculate_normalized_risk(medical_history):
     risk_scores = {
